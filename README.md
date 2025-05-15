@@ -33,7 +33,7 @@ users can quickly find the perfect soundtrack for any situation.The site feature
 ## Project Structure
 
 - **1.html**: Main page with mood categories and playlists
-- **signup.html**: User registration page
+- **sigup.html**: User registration page
 - **login.html**: User login page
 - **CSS**: Inline styling for consistent UI theme
 - **Image Assets**: Carousel images for different moods (referenced in HTML)
