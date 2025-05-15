@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Driven Music Playlist</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #e0d7f2; 
+            color: #171717;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #1f1f1f;
+            padding: 10px 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #bba6e4; 
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .search-bar {
+            width: 40%;
+            display: flex;
+        }
+
+        .search-bar input {
+            width: 100%;
+            border-radius: 20px;
+            padding: 10px;
+            border: none;
+            margin-right: 10px;
+        }
+
+        .search-bar button {
+            border-radius: 20px;
+            background-color: #e0d7f2;
+            color: rgb(11, 10, 10);
+            border: none;
+            padding: 10px 20px;
+        }
+
+        header nav a {
+            color: #fffbfb;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #e0d7f2; 
+        }
+
+        footer {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            color: #b3b3b3;
+            margin-top: 50px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .card {
+            background-color: #282828;
+            color: #b3b3b3;
+            border: none;
+            margin: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .card img {
+            border-radius: 15px 15px 0 0;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .playlist {
+            display: none;
+            background-color: #282828;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(24, 24, 24, 0.4);
+        }
+
+        .btn-listen {
+            background-color:  #e0d7f2; 
+            color: rgb(18, 17, 17);
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+
+        .btn-listen:hover {
+            background-color:  #e0d7f2;
+        }
+
+        .song-box {
+            display: flex;
+            align-items: center;
+            background-color: #3a3a3a;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .song-box img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        audio {
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-title">Mood-Driven Music Playlist</div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search for a song or playlist">
+        <button>Search</button>
+    </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Playlists</a>
+        <a href="sigup.html">Sign Up</a> 
+        <a href="login.html" data-bs-toggle="modal" data-bs-target="#loginModal">Log In</a>
+    </nav>
+</header>
+
+<div class="container text-center mt-5">
+    <h2>Explore Playlists for Every Mood</h2>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- CHILL VIBES CARD -->
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div id="chillVibesCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="Sooseki-From-Pushpa-img3" class="d-block w-100" alt="Chill Vibes Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="sad_sitaramimag2.jpeg" class="d-block w-100" alt="Chill Vibes Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="devera1image.jpeg" class="d-block w-100" alt="Chill Vibes Image 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#chillVibesCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#chillVibesCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Chill Vibes</h5>
+                    <p class="card-text">Perfect for relaxing and unwinding.</p>
+                    <button class="btn btn-listen" onclick="showPlaylist('relaxed')">Listen</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- WORKOUT BEATS CARD -->
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div id="workoutBeatsCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="wo1.jpg" class="d-block w-100" alt="Workout Beats Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="workout.jpeg" class="d-block w-100" alt="Workout Beats Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="wo3.jpeg" class="d-block w-100" alt="Workout Beats Image 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#workoutBeatsCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#workoutBeatsCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Workout Beats</h5>
+                    <p class="card-text">Get energized with these tunes.</p>
+                    <button class="btn btn-listen" onclick="showPlaylist('happy')">Listen</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- STUDY MUSIC CARD -->
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div id="studyMusicCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="st1.jpeg" class="d-block w-100" alt="Study Music Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="st2.jpeg" class="d-block w-100" alt="Study Music Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="st3.jpeg" class="d-block w-100" alt="Study Music Image 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#studyMusicCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#studyMusicCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Study Music</h5>
+                    <p class="card-text">Focus better with this background music.</p>
+                    <button class="btn btn-listen" onclick="showPlaylist('study')">Listen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CHILL VIBES PLAYLIST -->
+<div class="container mt-5">
+    <div id="playlist-relaxed" class="playlist">
+        <h4>Chill Vibes Playlist</h4>
+        <div class="song-box" onclick="playAudio('Sooseki.mp3')">
+            <img src="Sooseki-From-Pushpa-img3" alt="Song Logo">
+            <div><strong>Sooseki - From Pushpa 2</strong></div>
+        </div>
+        <div class="song-box" onclick="playAudio('HiNanna.mp3')">
+            <img src="sad_hinanna3.jpeg" alt="Song Logo">
+            <div><strong>Hi Nanna</strong></div>
+        </div>
+        <audio id="audio-player" controls>
+            <source src="" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <!-- WORKOUT BEATS PLAYLIST (ADDED) -->
+    <div id="playlist-happy" class="playlist">
+        <h4>Workout Beats Playlist</h4>
+        <div class="song-box" onclick="playAudio('workout1.mp3')">
+            <img src="wo1.jpg" alt="Song Logo">
+            <div><strong>Power Up - Workout Mix</strong></div>
+        </div>
+        <div class="song-box" onclick="playAudio('workout2.mp3')">
+            <img src="workout.jpeg" alt="Song Logo">
+            <div><strong>High Energy Beats</strong></div>
+        </div>
+        <audio id="audio-player-happy" controls>
+            <source src="" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <!-- STUDY MUSIC PLAYLIST (ADDED) -->
+    <div id="playlist-study" class="playlist">
+        <h4>Study Music Playlist</h4>
+        <div class="song-box" onclick="playAudio('stmusic1.mp3')">
+            <img src="st1.jpeg" alt="Song Logo">
+            <div><strong>Focus Flow</strong></div>
+        </div>
+        <div class="song-box" onclick="playAudio('study2.mp3')">
+            <img src="st2.jpeg" alt="Song Logo">
+            <div><strong>Deep Concentration</strong></div>
+        </div>
+        <audio id="audio-player-study" controls>
+            <source src="" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</div>
+
+<script>
+    function showPlaylist(mood) {
+        document.querySelectorAll('.playlist').forEach(p => p.style.display = 'none');
+        const playlist = document.getElementById('playlist-' + mood);
+        if (playlist) {
+            playlist.style.display = 'block';
+        }
+    }
+
+    function playAudio(file) {
+        const audioPlayer = document.getElementById('audio-player');
+        audioPlayer.src = file;
+        audioPlayer.play();
+    }
+</script>
+
+<footer>
+    <p>© 2025 Mood Music App. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

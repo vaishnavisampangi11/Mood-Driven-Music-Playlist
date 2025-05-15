@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mood-Driven Music Playlist</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #121212;
+            color: #fef7f7;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            padding: 20px 0;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .login-form {
+            background-color: #1f1f1f;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 500px;
+            max-width: 80%;
+        }
+
+        .login-form h2 {
+            color: #bba6e4;  
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .login-form label {
+            color: #faf7f7;
+            margin-bottom: 5px;
+        }
+
+        .login-form input {
+            border-radius: 10px;
+            padding: 8px;
+            margin-bottom: 15px;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 8px;
+            border-radius: 10px;
+            background-color: #bba6e4;  
+            color: white;
+            border: none;
+        }
+
+        .login-form button:hover {
+            background-color: #a48fd6;  
+        }
+
+        .back-to-home {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .back-to-home a {
+            color: #bba6e4; 
+            text-decoration: none;
+        }
+
+        .back-to-home a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #1f1f1f;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        header h1 {
+            color: #bba6e4;  
+            margin: 0;
+            font-size: 28px;
+        }
+        
+        .form-group {
+            margin-bottom: 12px;
+        }
+        
+        .text-center {
+            margin-top: 12px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="1.html">
+                <h1>Mood-Driven Music Playlist</h1>
+            </a>
+        </nav>
+    </header>
+    
+    <div class="login-container">
+        <div class="login-form">
+            <h2>Login to Your Account</h2>
+            <form action="1.html" method="GET">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+
+            <div class="text-center">
+                <p>Don't have an account? <a href="signup.html" style="color: #ecebee;">Sign Up</a></p>
+            </div>
+            
+            <div class="back-to-home">
+                <a href="1.html">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer style="background-color: #1f1f1f; padding: 10px; text-align: center; margin-top: auto; box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.4);">
+        <p>&copy; 2024 Mood-Driven Music Playlist. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
