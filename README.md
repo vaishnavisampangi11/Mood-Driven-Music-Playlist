@@ -17,7 +17,7 @@ users can quickly find the perfect soundtrack for any situation.The site feature
 
 ## Technology Stack
 
-- **Frontend**: HTML, CSS, JavaScript
+- **Frontend**: HTML, CSS
 - **UI Framework**: Bootstrap 5.3 for responsive components and layout
 - **Audio Integration**: HTML5 audio for music playback
 - **Color Scheme**: Purple and dark theme for aesthetic appeal
